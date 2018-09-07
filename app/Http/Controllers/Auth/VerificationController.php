@@ -26,7 +26,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -38,5 +38,19 @@ class VerificationController extends Controller
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+    }
+
+    public function verify(Request $request)
+    {
+        dump($request->route("id"));
+        dump($request->user()->getKey());
+        dd($request->user());
+
+        if ($request->route('id') == $request->user()->getKey() &&
+            $request->user()->markEmailAsVerified()) {
+            event(new Verified($request->user()));
+        }
+
+        return redirect($this->redirectPath());
     }
 }
