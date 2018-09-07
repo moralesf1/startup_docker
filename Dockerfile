@@ -40,7 +40,9 @@ WORKDIR /var/www/html
 ADD ./ /var/www/html
 
 # install vendors
-RUN composer install
+# RUN composer install
+
+RUN cp .env.example .env
 
 
 
