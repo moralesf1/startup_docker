@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
@@ -42,9 +43,9 @@ class VerificationController extends Controller
 
     public function verify(Request $request)
     {
-        dump($request->route("id"));
-        dump($request->user()->getKey());
-        dd($request->user());
+//        dump($request->route("id"));
+//        dump($request->user()->getKey());
+//        dd($request->user());
 
         if ($request->route('id') == $request->user()->getKey() &&
             $request->user()->markEmailAsVerified()) {

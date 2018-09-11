@@ -28,6 +28,6 @@ class HomeController extends Controller
     }
     public function prueba() {
         $users = User::onlyTrashed()->get();
-        dd($users);
+        dd($users,action("HomeController@prueba"));
     }
 }
