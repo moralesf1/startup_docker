@@ -43,12 +43,12 @@
                         <h3 class="box-title m-b-20">Iniciar sesi&oacute;n</h3>
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" required="" placeholder="Correo...">
+                                <input class="form-control" type="text" required="" name="email" placeholder="Correo...">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" required="" placeholder="Contraseña...">
+                                <input class="form-control" type="password" required="" name="password" placeholder="Contraseña...">
                             </div>
                         </div>
                         <div class="form-group">

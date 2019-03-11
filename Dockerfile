@@ -40,9 +40,11 @@ WORKDIR /var/www/html
 ADD ./ /var/www/html
 
 # install vendors
-# RUN composer install
+# CMD ["composer","install"]
 
-RUN cp .env.example .env
+# RUN cp .env.example .env
+
+# RUN php artisan key:generate
 
 
 
